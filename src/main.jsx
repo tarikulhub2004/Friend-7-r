@@ -8,6 +8,7 @@ import HomeP from './components/HomeP/HomeP'
 import BookDetails from './components/BookDetails/BookDetails'
 import Timeline from './components/Timeline/Timeline'
 import Stats from './components/Stats/Stats'
+import BookProvider from './BookContext/BookContext'
 
 const router = createBrowserRouter([
   {
@@ -28,7 +29,7 @@ const router = createBrowserRouter([
         Component: Timeline,
       },
       {
-        path:'/stats',
+        path: '/stats',
         Component: Stats,
       }
     ]
@@ -37,6 +38,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router}></RouterProvider>
+    <BookProvider>
+      <RouterProvider router={router}></RouterProvider>
+    </BookProvider>
   </StrictMode>,
 )

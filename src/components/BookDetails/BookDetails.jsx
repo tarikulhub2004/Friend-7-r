@@ -1,11 +1,13 @@
+import { useContext, useState } from "react";
 import { IoVideocamOutline } from "react-icons/io5";
 import { MdOutlineTextsms } from "react-icons/md";
 import { TbPhoneCall } from "react-icons/tb";
 import { useLoaderData, useParams } from "react-router";
+import { BookContext } from "../../BookContext/BookContext";
 
 const BookDetails = () => {
 
-    const { id } = useParams()
+    const { id } = useParams();
     // console.log(id);
 
     const friends = useLoaderData();
@@ -15,6 +17,12 @@ const BookDetails = () => {
     // console.log(expectFriend);
 
     const { name, picture, status, tags, bio, email } = expectFriend;
+
+    const {call, setCall, handleCall} = useContext(BookContext);
+
+
+
+
 
     return (
         <div className="grid md:grid-cols-3 gap-5 my-15">
@@ -73,7 +81,8 @@ const BookDetails = () => {
 
                 <div className="shadow p-3 rounded bg-white">
                     <h3 className="text-xl font-semibold mb-3">Quick Check-In</h3>
-                    <div className="grid grid-cols-3 gap-3">
+
+                    <div onClick={() => handleCall(expectFriend)} className="grid grid-cols-3 gap-3">
                         <div className="shadow p-5 flex justify-center items-center rounded bg-gray-50 text-2xl font-semibold border border-gray-100">
                             <div className="text-center">
                                 <TbPhoneCall className="mx-auto" />
