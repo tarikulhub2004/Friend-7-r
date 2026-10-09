@@ -6,20 +6,30 @@ import { RouterProvider } from 'react-router/dom'
 import MainLayout from './layout/MainLayout'
 import HomeP from './components/HomeP/HomeP'
 import BookDetails from './components/BookDetails/BookDetails'
+import Timeline from './components/Timeline/Timeline'
+import Stats from './components/Stats/Stats'
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <MainLayout></MainLayout>,
-    children:[
+    children: [
       {
         index: true,
         element: <HomeP></HomeP>
       },
       {
-        path:'/bookDetails/:id',
-        loader: ()=>fetch("/users.json"),
+        path: '/bookDetails/:id',
+        loader: () => fetch("/users.json"),
         Component: BookDetails,
+      },
+      {
+        path: '/timeline',
+        Component: Timeline,
+      },
+      {
+        path:'/stats',
+        Component: Stats,
       }
     ]
   }

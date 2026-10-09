@@ -1,3 +1,6 @@
+import { IoVideocamOutline } from "react-icons/io5";
+import { MdOutlineTextsms } from "react-icons/md";
+import { TbPhoneCall } from "react-icons/tb";
 import { useLoaderData, useParams } from "react-router";
 
 const BookDetails = () => {
@@ -15,7 +18,7 @@ const BookDetails = () => {
 
     return (
         <div className="grid md:grid-cols-3 gap-5 my-15">
-            <div className="col-span-1">
+            <div className="col-span-1">f
                 <div className="bg-white mt-5 text-center flex shadow items-center justify-center rounded p-5">
                     <div className="">
                         <img className="w-[80px] rounded-full mx-auto" src={picture} alt="" />
@@ -38,7 +41,7 @@ const BookDetails = () => {
                 <div className="shadow my-3 text-center font-semibold h-12 flex justify-center items-center bg-white rounded text-red-600">Delete</div>
             </div>
 
-            <div className="grid grid-rows-3 gap-3 w-full col-span-2 mt-5">
+            <div className="grid grid-rows-3 gap-3 w-full col-span-2 mt-10">
                 <div className="grid grid-cols-3 gap-5">
                     <div className="flex justify-center text-center bg-white rounded items-center shadow">
                         <div className="">
@@ -71,14 +74,23 @@ const BookDetails = () => {
                 <div className="shadow p-3 rounded bg-white">
                     <h3 className="text-xl font-semibold mb-3">Quick Check-In</h3>
                     <div className="grid grid-cols-3 gap-3">
-                        <div className="shadow p-8 flex justify-center items-center rounded bg-gray-50 text-2xl font-semibold border border-gray-100">
-                            <h1>Call</h1>
+                        <div className="shadow p-5 flex justify-center items-center rounded bg-gray-50 text-2xl font-semibold border border-gray-100">
+                            <div className="text-center">
+                                <TbPhoneCall className="mx-auto" />
+                                <h1>Call</h1>
+                            </div>
                         </div>
-                        <div className="shadow p-8 flex justify-center items-center text-2xl font-semibold bg-gray-50 border border-gray-100">
-                            <h1>Text</h1>
+                        <div className="shadow p-5 flex justify-center items-center text-2xl font-semibold bg-gray-50 border border-gray-100">
+                            <div className="">
+                                <MdOutlineTextsms className="mx-auto" />
+                                <h1>Text</h1>
+                            </div>
                         </div>
-                        <div className="shadow p-8 flex justify-center items-center text-2xl font-semibold bg-gray-50 border border-gray-100">
-                            <h1>Video</h1>
+                        <div className="shadow p-5 flex justify-center items-center text-2xl font-semibold bg-gray-50 border border-gray-100">
+                            <div className="">
+                                <IoVideocamOutline className="mx-auto" />
+                                <h1>Video</h1>
+                            </div>
                         </div>
                     </div>
                 </div>
