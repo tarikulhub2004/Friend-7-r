@@ -7,7 +7,7 @@ import VideoTimeline from "./VideoTimeline/VideoTimeline";
 const Timeline = () => {
 // Voice Call
     const { call, text, video } = useContext(BookContext);
-    console.log(call, text, video)
+    // console.log(call, text, video)
 
     // Text
 

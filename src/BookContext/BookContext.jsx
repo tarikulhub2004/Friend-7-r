@@ -1,5 +1,6 @@
 import { createContext, useState } from "react";
 import { toast } from "react-toastify";
+import { getCallList, getTextList, getVideoCallList } from "../utilis/localDB";
 
 export const BookContext = createContext();
 
@@ -7,7 +8,7 @@ export const BookContext = createContext();
 
 const BookProvider = ({ children }) => {
     // Voice Call
-    const [call, setCall] = useState([]);
+    const [call, setCall] = useState(() => getCallList());
 
     const handleCall = (friend) => {
         toast(`Call ${friend.name}...`)
@@ -16,7 +17,7 @@ const BookProvider = ({ children }) => {
         // console.log(call);
     }
     // Text
-    const [text, setText] = useState([]);
+    const [text, setText] = useState(() => getTextList());
 
     const handleText = (friend) => {
         toast(`Text ${friend.name}...`);
@@ -24,7 +25,7 @@ const BookProvider = ({ children }) => {
     }
 
     // Video Call
-    const [video, setVideo] = useState([]);
+    const [video, setVideo] = useState(() => getVideoCallList());
 
     const handleVideo = (friend) => {
         toast(`Video Call ${friend.name}...`)

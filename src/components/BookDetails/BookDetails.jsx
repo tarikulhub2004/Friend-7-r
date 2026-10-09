@@ -4,6 +4,7 @@ import { MdOutlineTextsms } from "react-icons/md";
 import { TbPhoneCall } from "react-icons/tb";
 import { useLoaderData, useParams } from "react-router";
 import { BookContext } from "../../BookContext/BookContext";
+import { addCallList, addTextList, addVideoCallList } from "../../utilis/localDB";
 
 const BookDetails = () => {
 
@@ -19,9 +20,6 @@ const BookDetails = () => {
     const { name, picture, status, tags, bio, email } = expectFriend;
 
     const { handleCall, handleText, handleVideo } = useContext(BookContext);
-
-
-
 
 
     return (
@@ -83,19 +81,28 @@ const BookDetails = () => {
                     <h3 className="text-xl font-semibold mb-3">Quick Check-In</h3>
 
                     <div className="grid grid-cols-3 gap-3">
-                        <div onClick={() => handleCall(expectFriend)} className="cursor-pointer shadow p-5 flex justify-center items-center rounded bg-gray-50 text-2xl font-semibold border border-gray-100">
+                        <div onClick={() => {
+                            handleCall(expectFriend),
+                                addCallList(expectFriend)
+                        }} className="cursor-pointer shadow p-5 flex justify-center items-center rounded bg-gray-50 text-2xl font-semibold border border-gray-100">
                             <div className="text-center">
                                 <TbPhoneCall className="mx-auto" />
                                 <h1>Call</h1>
                             </div>
                         </div>
-                        <div onClick={() => handleText(expectFriend)} className="shadow p-5 flex justify-center items-center text-2xl cursor-pointer font-semibold bg-gray-50 border border-gray-100">
+                        <div onClick={() => {
+                            handleText(expectFriend),
+                                addTextList(expectFriend)
+                        }} className="shadow p-5 flex justify-center items-center text-2xl cursor-pointer font-semibold bg-gray-50 border border-gray-100">
                             <div className="">
                                 <MdOutlineTextsms className="mx-auto" />
                                 <h1>Text</h1>
                             </div>
                         </div>
-                        <div onClick={()=> handleVideo(expectFriend)} className="shadow p-5 flex justify-center items-center text-2xl cursor-pointer font-semibold bg-gray-50 border border-gray-100">
+                        <div onClick={() => {
+                            handleVideo(expectFriend),
+                                addVideoCallList(expectFriend)
+                        }} className="shadow p-5 flex justify-center items-center text-2xl cursor-pointer font-semibold bg-gray-50 border border-gray-100">
                             <div className="">
                                 <IoVideocamOutline className="mx-auto" />
                                 <h1>Video</h1>
