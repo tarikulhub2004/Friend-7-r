@@ -9,6 +9,7 @@ const date = new Date().toLocaleDateString("en-US", {
 const TextTimeline = ({friend}) => {
     return (
         <div>
+            
             <div className="w-full border border-gray-200 bg-white shadow rounded gap-3 p-3 my-5 flex">
                 <div className="my-auto">
                     <IoMdText className="text-4xl" />

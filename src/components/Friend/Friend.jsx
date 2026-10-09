@@ -6,7 +6,7 @@ const Friend = ({ friend }) => {
 
     return (
         <div>
-            <Link to={`/bookDetails/${id}`} className="mt-5 text-center flex shadow items-center justify-center rounded p-5 bg-white">
+            <Link to={`/bookDetails/${id}`} className="text-center flex shadow items-center justify-center rounded p-5 bg-white">
                 <div className="">
                     <img className="w-[80px] rounded-full mx-auto" src={picture} alt="" />
                     <p className="text-xl font-bold">{name}</p>

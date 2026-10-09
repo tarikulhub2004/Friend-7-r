@@ -45,7 +45,7 @@ const Friends = () => {
                 </div>
             </div>
             <div className="mt-5">
-                <h3 className="font-bold text-2xl">Your Friends</h3>
+                <h3 className="font-bold text-2xl mb-5">Your Friends</h3>
                 <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-4">
                     {
                         friends.map(friend => <Friend friend={friend} key={friend.id}></Friend>)
