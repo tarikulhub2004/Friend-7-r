@@ -9,7 +9,6 @@ const Friends = () => {
         const getUsers = async () => {
             const res = await fetch("/users.json");
             const users = await res.json();
-            console.log(users)
 
             setFriends(users)
         }
@@ -19,26 +18,26 @@ const Friends = () => {
 
     return (
         <div className="mt-15">
-            <div className="grid grid-cols-4 gap-4">
-                <div className="flex h-30 shadow text-center items-center justify-center rounded">
+            <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-4">
+                <div className="flex h-30 shadow text-center items-center justify-center bg-white rounded">
                     <div className="">
                         <p className="font-bold text-2xl">{friends.length}</p>
                         <h4 className="text-gray-500">Total Friends</h4>
                     </div>
                 </div>
-                <div className="flex h-30 shadow text-center items-center justify-center rounded">
+                <div className="flex h-30 shadow text-center items-center justify-center bg-white rounded">
                     <div className="">
                         <p className="font-bold text-2xl">3</p>
                         <h4 className="text-gray-500">On Track</h4>
                     </div>
                 </div>
-                <div className="flex h-30 shadow text-center items-center justify-center rounded">
+                <div className="flex h-30 shadow text-center items-center justify-center bg-white rounded">
                     <div className="">
                         <p className="font-bold text-2xl">10</p>
                         <h4 className="text-gray-500">Need Attention</h4>
                     </div>
                 </div>
-                <div className="flex h-30 shadow text-center items-center justify-center rounded">
+                <div className="flex h-30 shadow text-center items-center justify-center bg-white rounded">
                     <div className="">
                         <p className="font-bold text-2xl" >12</p>
                         <h4 className="text-gray-500">Interactions This Month</h4>
@@ -47,7 +46,7 @@ const Friends = () => {
             </div>
             <div className="mt-5">
                 <h3 className="font-bold text-2xl">Your Friends</h3>
-                <div className="grid grid-cols-4 gap-4">
+                <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-4">
                     {
                         friends.map(friend => <Friend friend={friend} key={friend.id}></Friend>)
                     }

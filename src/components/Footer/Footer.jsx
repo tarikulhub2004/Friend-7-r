@@ -51,9 +51,9 @@ const Footer = () => {
                     </div>
                 </nav>
             </footer>
-            <div className="flex justify-between px-50 pb-10 text-gray-300">
+            <div className="flex flex-col md:flex-row md:justify-between px-50 pb-10 gap-5 text-gray-300 text-center">
                 <div className="">© 2026 KeenKeeper. All rights reserved.</div>
-                <div className=" flex gap-5">
+                <div className=" flex gap-5 flex-col md:flex-row">
                     <p className="text-gray-300">Privacy Policy</p>
                     <p className="text-gray-300">Terms of Service </p>
                     <p className="text-gray-300">Cookies</p>
