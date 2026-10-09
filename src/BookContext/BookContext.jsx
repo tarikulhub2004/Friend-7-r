@@ -11,7 +11,7 @@ const BookProvider = ({ children }) => {
     const [call, setCall] = useState(() => getCallList());
 
     const handleCall = (friend) => {
-        toast(`Call ${friend.name}...`)
+        toast.success(`Call ${friend.name}...`)
         // console.log("Friend id", friend)
         setCall([...call, friend]);
         // console.log(call);
@@ -20,7 +20,7 @@ const BookProvider = ({ children }) => {
     const [text, setText] = useState(() => getTextList());
 
     const handleText = (friend) => {
-        toast(`Text ${friend.name}...`);
+        toast.success(`Text ${friend.name}...`);
         setText([...text, friend]);
     }
 
@@ -28,7 +28,7 @@ const BookProvider = ({ children }) => {
     const [video, setVideo] = useState(() => getVideoCallList());
 
     const handleVideo = (friend) => {
-        toast(`Video Call ${friend.name}...`)
+        toast.success(`Video Call ${friend.name}...`)
         setVideo([...video, friend]);
     }
 

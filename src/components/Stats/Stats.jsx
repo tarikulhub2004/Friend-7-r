@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { BookContext } from "../../BookContext/BookContext";
-import { Cell, Pie, PieChart, ResponsiveContainer, Tooltip } from "recharts";
+import { Cell, Pie, PieChart, Tooltip } from "recharts";
 
 const Stats = () => {
 
