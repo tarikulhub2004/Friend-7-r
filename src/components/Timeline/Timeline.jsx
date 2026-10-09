@@ -12,24 +12,26 @@ const Timeline = () => {
     const [filterText, setFilterText] = useState(text);
     const [filterVideo, setFilterVideo] = useState(video);
 
-    
-    const handleFilterCall=()=>{
+
+    const handleFilterCall = () => {
         setFilterCall(call)
         setFilterText([]);
         setFilterVideo([]);
     }
 
-    const handleFilterText=()=>{
+    const handleFilterText = () => {
         setFilterCall([]);
         setFilterText(text);
         setFilterVideo([]);
     }
 
-    const handleFilterVideo=()=>{
+    const handleFilterVideo = () => {
         setFilterCall([]);
         setFilterText([]);
         setFilterVideo(video);
     }
+
+    const empty = call.length === 0 && text.length === 0 && video.length === 0;
 
     return (
         <div className="mt-15">
@@ -38,11 +40,21 @@ const Timeline = () => {
             <div className="dropdown dropdown-bottom my-3">
                 <div tabIndex={0} role="button" className="btn m-1 border border-gray-300 rounded">Filter timeline ⬇️</div>
                 <ul tabIndex={-1} className="dropdown-content menu  rounded-box z-1 w-52 p-2 shadow-sm bg-white">
-                    <li onClick={()=> handleFilterCall()}><a>Call</a></li>
-                    <li onClick={()=>handleFilterText()}><a>Text</a></li>
-                    <li onClick={()=>handleFilterVideo()}><a>Video</a></li>
+                    <li onClick={() => handleFilterCall()}><a>Call</a></li>
+                    <li onClick={() => handleFilterText()}><a>Text</a></li>
+                    <li onClick={() => handleFilterVideo()}><a>Video</a></li>
                 </ul>
             </div>
+
+            {
+                empty && (
+                    <div className="w-full border border-gray-200 bg-white shadow rounded gap-3 p-3 my-5 flex text-gray-600">
+                        No Timeline history
+                    </div>
+                )
+            }
+
+
 
             {/* Voice Call */}
             {
