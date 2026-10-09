@@ -9,7 +9,6 @@ import BookDetails from './components/BookDetails/BookDetails'
 import Timeline from './components/Timeline/Timeline'
 import Stats from './components/Stats/Stats'
 
-
 const router = createBrowserRouter([
   {
     path: '/',
@@ -34,11 +33,7 @@ const router = createBrowserRouter([
       }
     ]
   }
-],
-{
-  basename: '/Friend-7-r/'
-}
-)
+])
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
