@@ -14,7 +14,7 @@ const BookDetails = () => {
     const { name, picture, status, tags, bio, email } = expectFriend;
 
     return (
-        <div className="grid grid-cols-3 gap-5 my-15">
+        <div className="grid md:grid-cols-3 gap-5 my-15">
             <div className="col-span-1">
                 <div className="bg-white mt-5 text-center flex shadow items-center justify-center rounded p-5">
                     <div className="">
