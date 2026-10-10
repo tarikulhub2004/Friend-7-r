@@ -10,6 +10,7 @@ import Timeline from './components/Timeline/Timeline'
 import Stats from './components/Stats/Stats'
 import BookProvider from './BookContext/BookContext'
 import { ToastContainer } from 'react-toastify'
+import ErrorPage from './components/ErrorPage/ErrorPage'
 
 const router = createBrowserRouter([
   {
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
         Component: Stats,
       }
     ]
+  },
+  {
+    path:'*',
+    element: <ErrorPage></ErrorPage>
   }
 ])
 
