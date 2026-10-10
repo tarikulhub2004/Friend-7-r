@@ -19,11 +19,11 @@ const Stats = () => {
     return (
         <div>
             <h1 className="text-5xl font-semibold mt-10">Friendship Analytics</h1>
-            <div className="bg-white border border-gray-200 shadow mt-8">
-                <h4 className="text-left font-semibold text-gray-500 py-5 pl-5">By Interaction Type</h4>
+            <div className="bg-white border border-gray-200 shadow mt-5">
+                <h4 className="text-left font-semibold text-gray-500 pt-5 pl-5">By Interaction Type</h4>
 
                 {
-                    empty ? (<h1 className="text-gray-500 font-semibold">No interactions logged yet</h1>) : (<div className="w-full justify-center items-center rounded gap-3 p-3 my-5 flex text-gray-600">
+                    empty ? (<h1 className="text-gray-500 font-semibold text-center pb-5">No interactions logged yet</h1>) : (<div className="w-full justify-center items-center rounded gap-3 p-3 my-5 flex text-gray-600">
                         <div className="">
                             <div className="md:w-[300px]">
                                 <PieChart style={{ width: '100%', maxWidth: '500px', maxHeight: '80vh', aspectRatio: 1 }} responsive>
